@@ -8,6 +8,6 @@ RUN CGO_ENABLED=0 go test -v
 WORKDIR /tmp/app/cmd/enola
 RUN go build -o ./enola .
 
-FROM alpine:3.17 
+FROM alpine:3.21.0 
 COPY --from=build_base /tmp/app/cmd/enola/enola /app/enola
 ENTRYPOINT ["/app/enola"]
